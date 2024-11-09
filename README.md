@@ -2,6 +2,10 @@
 
 A simple Todo application that allows users to create a list of tasks, mark them as completed, and clear completed tasks.
 
+## Live Demo
+
+You can view the live version of the TodoApp here: [Live Demo](https://todo-app-react-tau-sage.vercel.app/)
+
 ## Features
 
 - **Add new tasks** to the list
