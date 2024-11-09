@@ -58,7 +58,7 @@ Open your browser and go to `http://localhost:3000` to view the application.
 
 ### Main View
 
-![Main View](../screenshot/TodoApp.png)
+![Main View](./screenshot/TodoApp.png)
 
 ## Contributing
 
