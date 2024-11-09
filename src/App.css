@@ -1,0 +1,198 @@
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+} */
+
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  background-color: rgb(235, 232, 232);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff; /* Beyaz arka plan */
+  padding: 20px; /* İçeriklerin etrafında boşluk */
+  border-radius: 10px; /* Yuvarlatılmış köşeler */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+  width: 100%; /* Kartın genişliği */
+  max-width: 500px; /* Maksimum genişlik */
+  margin: 20px auto; /* Ortalamak için */
+  margin-top: 150px;
+}
+
+.red-light {
+  color: rgba(255, 0, 0, 0.5);
+  font-size: 4.2em; 
+  font-weight: lighter;
+}
+
+.todo-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between; /* Sağ ve sol hizalama */
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.button-container button {
+  background: none; /* Arka plan rengini kaldırır */
+  border: none; /* Kenarlığı kaldırır */
+  color: #333; /* Yazı rengi */
+  cursor: pointer;
+  padding: 5px; /* İsteğe bağlı, daha rahat bir tıklama alanı oluşturur */
+  font-size: 1em;
+}
+
+.button-container button.selected {
+  font-weight: bold; /* Seçili butonu vurgular */
+  border: 1px solid rgb(222, 118, 118);
+}
+
+.button-container .filters {
+  display: flex;
+  gap: 10px; /* Butonlar arasındaki boşluk */
+}
+
+.button-container div {
+  display: flex;
+  align-items: center;
+}
+
+/* Input alanı için stil */
+.new-todo input[type="text"] {
+  font-style: italic;               /* Yazıyı italik yapar */
+  color: #777;                      /* Hafif silik gri renk */
+  padding: 10px;                    /* İç boşluk */
+  border: 1px solid #ccc;           /* Çerçeve rengi */
+  border-radius: 5px;               /* Köşeleri yuvarlar */
+  width: 250px;                     /* Genişlik */
+  font-size: 16px;                  /* Yazı boyutu */
+  outline: none;                    /* Kenar çizgisini kaldırır */
+}
+
+.new-todo input[type="text"]::placeholder {
+  color: #bbb;                      /* Placeholder rengini daha silik yapar */
+}
+
+/* Add butonu için stil */
+.new-todo button[type="submit"] {
+  background-color: #c5d8c5;        /* Buton arka plan rengi */
+  color: white;                     /* Yazı rengi */
+  padding: 10px 20px;               /* Buton iç boşluk */
+  border: none;                     /* Çerçeve yok */
+  border-radius: 5px;               /* Yuvarlak köşeler */
+  font-size: 16px;                  /* Yazı boyutu */
+  cursor: pointer;                  /* Fare işaretçisi */
+  transition: background-color 0.3s ease;  /* Hover geçiş efekti */
+}
+
+.new-todo button[type="submit"]:hover {
+  background-color: #45a049;        /* Hover rengi */
+}
+
+/* Liste öğesini flex düzeniyle hizalama */
+.list-item {
+  display: flex;
+  justify-content: space-between;    /* Checkbox + metin solda, buton sağda */
+  align-items: center;               /* Dikey ortalama */
+  padding: 8px 0;                    /* Üst ve alt boşluk */
+  border-bottom: 1px solid #ccc;     /* Alt çizgi */
+}
+
+/* Checkbox ve metni sola hizalayacak kapsayıcı */
+.left-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;                         /* Checkbox ile metin arasında boşluk */
+}
+
+.delete-button {
+  background: none;
+  border: none;
+  color: red;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.delete-button:hover {
+  color: darkred;                    /* Hover efekti */
+}
+
+input[type="checkbox"] {
+  width: 20px;               /* Genişlik ayarı */
+  height: 20px;              /* Yükseklik ayarı */
+  appearance: none;          /* Tarayıcı varsayılan stilini kaldırır */
+  border: 2px solid #000;    /* Çerçeve rengi ve kalınlığı */
+  border-radius: 50%;        /* Köşe yuvarlama, checkbox'ı yuvarlak yapar */
+  cursor: pointer;           /* Fare işaretçisi */
+
+  /* Seçilmediğinde arka plan rengi */
+  background-color: #fff;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #4caf50; /* Seçildiğinde arka plan rengi */
+  border-color: #4caf50;     /* Seçildiğinde çerçeve rengi */
+}
+
+input[type="checkbox"]:checked::before {
+  content: "✔";              /* Onay işareti */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 14px;
+}
